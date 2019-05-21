@@ -12,16 +12,16 @@ const FlexDiv = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  margin: ${props => props.divMargin}
+  margin: ${props => props.divMargin};
   align-items: center;
   animation: 4s ${fadeAnimation};
   font-family: 'Cabin', sans-serif;
 
   @media (max-width: 600px){
-    margin: ${props => props.phoneMargin}
+    margin: ${props => props.phoneMargin};
   }
   @media (max-width: 800px){
-    margin: ${props => props.divMargin}
+    margin: ${props => props.divMargin};
   }
 `
 

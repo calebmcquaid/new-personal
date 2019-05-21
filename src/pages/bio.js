@@ -53,6 +53,7 @@ const Container = styled.div`
 
 const Title = styled.h1`
   color: #8dc53f;
+  margin-top: 1em;
 `
 
 const BioPage = () => (

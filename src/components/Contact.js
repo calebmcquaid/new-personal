@@ -37,18 +37,18 @@ const FormInput = styled.input`
   padding: 5px;
   border-radius: 3px;
   width: 100%;
-  background: black
+  background: black;
   border: none;
   border-bottom: 2px solid #8dc53f;
-  color: white;
   font-family: 'Cabin';
   &::placeholder {
     color: white;
   }
 
   @media (max-width: 400px) {
-    font-size: 18px;
+    font-size: 19px;
   }
+
 
 
 `
@@ -68,7 +68,7 @@ const FormTextArea = styled.textarea`
     color: white;
   }
   @media (max-width: 400px) {
-    font-size: 18px;
+    font-size: 19px;
   }
 `
 const StyledButton = styled.button`
@@ -90,7 +90,7 @@ const StyledButton = styled.button`
     text-decoration: none;
   }
   @media (max-width: 400px) {
-    font-size: 18px;
+    font-size: 19px;
   }
 `
 
