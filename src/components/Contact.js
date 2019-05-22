@@ -40,7 +40,8 @@ const FormInput = styled.input`
   background: black;
   border: none;
   border-bottom: 2px solid #8dc53f;
-  font-family: 'Cabin';
+  font-family: "Cabin";
+  color: white;
   &::placeholder {
     color: white;
   }
@@ -48,9 +49,6 @@ const FormInput = styled.input`
   @media (max-width: 400px) {
     font-size: 19px;
   }
-
-
-
 `
 
 const FormTextArea = styled.textarea`
@@ -101,7 +99,10 @@ const Contact = () => (
       method="POST"
     >
       <Titles>
-        Thanks for stopping by!<br/><br/>Have a website that needs created or reworked? Have a web application
+        Thanks for stopping by!
+        <br />
+        <br />
+        Have a website that needs created or reworked? Have a web application
         that you need help with? Want to just say hi?
         <br />
         <br />
