@@ -94,6 +94,7 @@ class Header extends Component {
           <StyledLink to={"/work"}>Work</StyledLink>
           <StyledLink to={"/bio"}>Bio</StyledLink>
           <StyledLink to={"/blog"}>Blog</StyledLink>
+          <StyledLink to={"/zen"}>Zen Garden</StyledLink>
           <StyledLink to={"/contact"}>Contact</StyledLink>
         </Nav>
       </Container>
