@@ -1,9 +1,9 @@
 import React from "react"
 import Card from "../components/Card"
 import Header from "../components/Header"
-import wecompete from "./wecompete.png"
-import songspot from "./songspot.png"
-import slack from "./slack.png"
+import wecompete from "../images/wecompete.png"
+import songspot from "../images/songspot.png"
+import slack from "../images/slack.png"
 import styled from "styled-components"
 
 //mobile: 0-600
