@@ -3,13 +3,6 @@ const path = require(`path`)
 module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: path.join(__dirname, `src`, `images`),
-      },
-    },
     `gatsby-transformer-sharp`, 
     `gatsby-plugin-sharp`,
     {
@@ -43,27 +36,13 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-spotify`,
-      options: {
-        clientId: `c46f9cdf727c4c909d3ae9f86b4abb3e`,
-        clientSecret: `6fc06054b623479e8742ff3d0c8f6676`,
-        refreshToken: `AQAyZF26_bNHvuM_iNpvMu7aHm14Dl3ECJ2np9b77FV0BCTDG6I3Covi1XUt7Aonu1WitET74ynmJi0usXsTVJMNhR_8sZoACvFEPhdkVJzhpE259Nmh_fw2bK9JKm0tgRs`,
-    
-        fetchPlaylists: true, // optional. Set to false to disable fetching of your playlists
-        fetchRecent: true, // optional. Set to false to disable fetching of your recently played tracks
-        timeRanges: ['short_term', 'medium_term', 'long_term'], // optional. Set time ranges to be fetched
-      },
-    },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Montserrat`,
-            variants: [`400`, `700`],
-          },
+          `Montserrat\:400,700` // you can also specify font weights and styles
         ],
-      },
+        display: 'swap'
+      }
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
