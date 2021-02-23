@@ -1,7 +1,7 @@
 import React from "react"
 import Header from "../components/Header"
 import styled from "styled-components"
-import caleb from "./caleb.png"
+import caleb from "../images/caleb.png"
 
 const Feed = styled.div`
   display: flex;
@@ -62,7 +62,7 @@ const BioPage = () => (
     <Feed>
         <Container testing={caleb} />
         <Title>Caleb McQuaid</Title>
-        <Content>Hello! My name is Caleb McQuaid and I am a software developer at Booz Allen Hamilton. I work on a large team of other developers, QA's, and project leads to produce a very large and intricate piece of software for a government agency. This requires me to write Java and Javascript code to add features and fix defects on the legacy software. <br/>While that is my primary postition, I am also available for freelance and contract work! I have experience in building anything from Slack bots in Ruby to writing original OAuth strategies for my cross-platform, fitness application. When I'm not programming, I am typically spending time with my wife exploring Charleston. We recently moved here and we love it! Feel free to poke around my website, Twitter, and reach out if you need anything!<br/><br/> -Caleb</Content>
+        <Content>Hello! My name is Caleb McQuaid and I am a software apprentice at Enok Collective. Enok is a small software group that specializes in software craftsmanship. The focus on being a master of my craft has been a great and different way to look at writing code and developing software for me. <br/>While that is my primary postition, I am also available for freelance and contract work! I have experience in building anything from Slack bots in Ruby to writing original OAuth strategies for my cross-platform, fitness application. When I'm not programming, I am typically spending time with my wife and our neighbors. Feel free to poke around my website, Twitter, and reach out if you need anything!<br/><br/> -Caleb</Content>
     </Feed>
   </div>
 )
