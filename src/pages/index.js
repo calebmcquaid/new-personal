@@ -1,6 +1,4 @@
 import React from "react"
-// import Header from "../components/Header"
-import Contact from "../components/Contact"
 import { Link } from "gatsby"
 import Header from "../components/Header"
 import styled, { keyframes } from "styled-components"
