@@ -6,13 +6,52 @@ import styled from "styled-components"
 const Feed = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin: 2em;
 `
 
-const BlogPage = (title, text) => (
+const BlogPage = () => (
   <div>
     <Header />
     <Feed>
+      <Post
+        title="Testing"
+        text="Testing. That word brings up 2 very different feelings for me. On one hand, when I open up a project with a nicely fleshed out test suite, I am very excited. I don't have to wonder what works and what doesn't! Fully green tests gives me a greater level of confidence that my fix isn't going to bring the app crashing down when I push to production. What a great feeling!<br /><br />
+        On the other hand, the thought of *writing* quality tests, fills me with absolute dread. I feel like I can barely write quality production code! What makes me think that I can write quality tests that checks my code?! *Deep Breath* ...Let's talk about tests and what I'm learning.<br /><br />
+        I am currently apprenticing with Enok Collective and I love it. The company as a whole is a quality organization. My mentor and I identified some of the areas of my work that could use the most work and would give the most return. I chose testing as a skill that would give me the most benefits starting out. I've been in software for 2 years at this point, and testing has been a part of every job I've worked at. But 2 years in, I still get queasy about the idea of writing a test for my flimsy code (notice, I always write my tests after my code...[more on that later]). Enok strives for Test Driven Development (TDD) in all of the work that they do. TDD is just what it says it is: software development that starts with and is driven by testing. This means **starting** with testing. Starting with testing is a huge mind shift for me. Testing has always been a secondary priority. If I have time, I will throw in a single test and call it a day. With this being my mindset, my code has suffered and I am constantly concerned about the next feature that might break my fragile code and force me to rewrite it.<br /><br />
+        This past week I have started a deep dive into best practices of testing and I am attempting to elevate my tests to be &quot;first-class citizens&quot;. Here are the resources that I have taken advantage of: <br/><br />
+
+<ul><li>Blogs and talks</li><br />
+    There are so many great blogs and talks out there, but I thoroughly enjoyed these two:<br />
+        - [How to Stop Hating Your Tests](https://blog.testdouble.com/talks/2015-11-16-how-to-stop-hating-your-tests/)<br />
+        - [First-Class Tests](https://blog.cleancoder.com/uncle-bob/2017/05/05/TestDefinitions.html)<br />
+<ul><li>Codewars.com</li><br />
+    This site allows you to practice coding exercises that are then tested to see if found the correct answer. I have taken the TDD approach to these exercises by first writing failing tests, and then making them pass.<br />
+<ul><li>Writing!</li><br />
+    This post is my way of solidifying my learning by forcing me to explain my experience.<br /><br />
+
+What I've learned about tests so far:<br /><br />
+
+1. Types of tests<br />
+
+    There are 3 standard types of tests: Unit, Integration, End-to-End. These vary in the amount of code that is being tested. Unit tests are small tests that check individual objects, methods, functions, or components. Unit tests should be small and ubiquitous. If a single unit test just keeps growing and growing, that might be a code-smell that your object/method/function might need to be refactored and split into multiples.<br />
+
+    Integration tests are the next step. These tests ensure that the data is flowing properly between two modules. This should reveal any issues that may arise when you use multiple modules together with each other.<br />
+
+    Finally, there's End-to-End testing. e2e testing is meant to simulate a real user using your application. This provides some more visibility at a higher level by drawing in all of the code from start to finish, dependencies and all, and ensures that everything plays nicely together.<br /><br />
+
+2. Red, Green, Refactor<br />
+
+    Before any production code is written, a *failing* test should be written. This test sets the expectation for what the code should accomplish. After the test is written, the test is run, and you see the red failure, you can now start to write your production code. This code should turn the red test to green, meaning it should fulfill the test's expectation and nothing else! Be sure to keep your code and tests small and simple. Finally, refactor your production code to ensure that the code is efficient and readable. And repeat!<br /><br />
+
+3. Tests are imperative<br />
+
+    Strong, wide-spread tests are the key to writing solid and robust code that can be changed and refactored without the fear of the codebase coming crashing down.<br /><br />
+
+I have so much more to learn and implement in my daily work when it comes to testing and coding in general, but this week has taught me some great lessons and principles."
+/>
+<div><br/><br/></div>
       <Post
         title="Fortnite Slack App"
         text={
@@ -24,9 +63,3 @@ const BlogPage = (title, text) => (
 )
 
 export default BlogPage
-
-//blog ideas
-//
-//CCS experience
-//ruby fortnite
-//brand design
