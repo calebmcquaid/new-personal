@@ -16,6 +16,43 @@ const BlogPage = () => (
     <Header />
     <Feed>
       <Post
+        title="Mocks"
+        text="This past week I have been developing a command-line todo app. This app is one of my first forays in using Test Driven Development in a “production” environment. Before any commands go into the command line, I set out to write a decent suite of tests that will dictate where my application would go and what it would ultimately be capable of. This new way of developing is a difficult change of pace, but I am learning to love it. In my previous jobs, there has always been a multi-step process for how to accomplish a task, with little deviation. Since getting into programming, I have felt like there is rarely an exact step-by-step process for anything and it has felt overwhelming at times. The TDD approach brings back a bit of that feeling of step-by-step processes. Instead of feeling like I need to develop this huge, nebulous project, I am only having to deal with bite-sized functions that have 1 purpose. A much less anxiety-inducing task.<br/><br/>
+        While this has been a great revelation, it hasn’t all been rainbows and butterflies. I tried to get creative with my tests and decided to test whether the returning message in the console had color. Adding color to the node console doesn’t come built-in, so I added the chalk package to my project. The test started as follows:<br/><br/>
+        <pre><code>test(“should return a colorful message”, () => {})</code></pre><br/><br/>
+        So how do I test this? What a great question. This was where I was introduced to using mocks. I have heard of mocks before but in my limited testing experience, I’ve never really taken the time to determine how they work and the processes underlying them. Mocks are fake objects that are created in tests to simulate the actions of real objects or modules. They are also referred to as “test doubles”. Once the mocks are properly set up, they can be inserted into tests and the test runner will assume that whatever is mocked will act properly.<br/><br/>
+        In the example above, I decided to use the chalk package to add a little color to my application. I use this package by calling the chalk object, the color method I want to display, and inside that method, I will put the text that I want to color. It looks like the following:<br/><br/>
+        <pre><code>function colorTodo(todo) {
+          return chalk.green(todo)
+       }</code></pre><br/><br/>
+       One concept I had to “work through” was the concept of what I wanted out of this test. Do I want to test the package that I am importing? Or do I want to just see the output that I am expecting to come out of this method? I am just looking for the output. The job of testing outside modules should fall to the developers of those modules and I can assume that these modules will work as intended.<br/><br/>
+       I will go ahead and assume that everything in that module is working correctly and mock that method. So let’s set that up. I am using Jest as my test runner, and I get some great mocking functionality out of the box. Because I am going to be using chalk in my testing file, I will go ahead and require it like I would in other files.<br/><br/>
+       <pre><code>const chalk = require('chalk')</code></pre><br/><br/>
+       Next, in my test that I set up above, I will mock out the chalk module.<br/><br/>
+       <pre><code>test('should return a colorful message', () => {
+        chalk.green = jest.fn()
+     })</code></pre><br/><br/>
+     To me, this line is saying “if you come across chalk.green in this test, substitute that with a fake function that will work every time.”
+     Now, I should be able to write the rest of my test just like normal:<br/><br/>
+      <pre><code>const chalk = require('chalk')
+      test('should return a colorful message', () => {
+         chalk.green = jest.fn()
+         const todo = 'This message looks cool!'
+         colorTodo(todo)
+         expect(chalk.green).toHaveBeenCalledTimes(1)
+      })<br/><br/>
+      As you can see, the only verification we are doing is verifying that the mocked method was called successfully.
+      Now that we have a (hopefully) failing test, let’s write the code to make it pass. Because we are only testing the chalk method, we shouldn’t try to do anything else. We should only try to call the method once.<br/><br/>
+      <pre><code>const chalk = require(‘chalk’)
+      function colorTodo(todo) {
+         return chalk.green(todo)
+      }</code></pre><br/><br/>
+      Now your test and output are both green!
+This example was extremely helpful for me to wrap my mind around mocking and testing in general. On to more testing practice!
+"
+      />
+      <div><br/><br/></div>
+      <Post
         title="Testing"
         text="Testing. That word brings up 2 very different feelings for me. On one hand, when I open up a project with a nicely fleshed out test suite, I am very excited. I don't have to wonder what works and what doesn't! Fully green tests gives me a greater level of confidence that my fix isn't going to bring the app crashing down when I push to production. What a great feeling!<br /><br />
         On the other hand, the thought of *writing* quality tests, fills me with absolute dread. I feel like I can barely write quality production code! What makes me think that I can write quality tests that checks my code?! *Deep Breath* ...Let's talk about tests and what I'm learning.<br /><br />
