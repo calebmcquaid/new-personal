@@ -28,6 +28,10 @@ const ContentDiv = styled.div`
   }
 `
 
+const Date = styled.p`
+  margin-top: 0px;
+`
+
 
 
 const Post = props => (
@@ -35,6 +39,9 @@ const Post = props => (
     <Title>
       <h1>{props.title}</h1>
     </Title>
+    <Date>
+      - {props.date}
+    </Date>
     <ContentDiv>
       <Markdown>{props.text}</Markdown>
     </ContentDiv>
